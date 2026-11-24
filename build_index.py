@@ -13,7 +13,7 @@ def split_into_chunks(text):
     if len(words) <= CHUNK_SIZE:
         return [text]
 
-    header = text.split("\n")[0]   # first line, e.g. "Technique ID: T1190"
+    header = "\n".join(text.split("\n")[:2])   # first two lines: ID and Name
     chunks = []
     start = 0
     while start < len(words):
